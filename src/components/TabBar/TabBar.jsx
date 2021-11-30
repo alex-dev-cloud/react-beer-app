@@ -1,3 +1,4 @@
+import React from 'react';
 import {observer} from 'mobx-react-lite';
 import {useHistory} from 'react-router-dom';
 import {tabsList} from './tabsList';
