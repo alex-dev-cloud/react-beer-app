@@ -4,6 +4,7 @@ import {routes} from '../routes'
 import {BEERS_LIST} from "../constants";
 
 const AppRouter = () => {
+
     return (
         <Switch>
             {

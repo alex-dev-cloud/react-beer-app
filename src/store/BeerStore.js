@@ -4,7 +4,6 @@ export class BeerStore {
 
     constructor() {
         this._beers  = [];
-        this._selectedTab = 'pizza';
         makeAutoObservable(this);
     }
 
@@ -14,13 +13,5 @@ export class BeerStore {
 
     get beers() {
         return this._beers;
-    }
-
-    setSelectedTab(tab) {
-        this._selectedTab = tab;
-    }
-
-    get selectedTab() {
-        return this._selectedTab;
     }
 }

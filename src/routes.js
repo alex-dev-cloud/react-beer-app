@@ -4,7 +4,7 @@ import SingleBeerPage from "./pages/SingleBeerPage";
 
 export const routes = [
     {
-        path: BEERS_LIST,
+        path: BEERS_LIST + '/:food?',
         component: BeerListPage
 
     },
