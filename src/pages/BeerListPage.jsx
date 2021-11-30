@@ -13,7 +13,6 @@ const BeerListPage = observer(() => {
     const {food} = useParams();
 
     useEffect(() => {
-        console.log(food);
         BeerApi.fetchAllBeers(food).then(beers => {
             beerStore.setBeers(beers);
         })
