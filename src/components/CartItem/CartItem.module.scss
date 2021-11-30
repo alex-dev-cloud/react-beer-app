@@ -1,0 +1,32 @@
+.cart {
+  width: 180px;
+  height: 250px;
+  border: 1px solid #cccccc;
+  margin: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.cart-img-container {
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
+}
