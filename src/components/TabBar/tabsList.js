@@ -1,7 +1,7 @@
 export const tabsList = [
     {
         title: 'All beers',
-        path: ''
+        path: '/'
     },
     {
         title: 'Pair with pizza',
