@@ -47,14 +47,14 @@ const SingleBeerPage = observer(() => {
                 <div className="infoContainer">
                     <h2>Alcohol By Volume: {beer.abv}%</h2>
                     <p className="tagline">{beer.tagline}</p>
-                    <p className="description">
+                    <div className="description">
                         <ShowMoreText>{beer.description}</ShowMoreText>
-                    </p>
+                    </div>
                     <h3>This beer pair with:</h3>
                     <ol>
                         {
-                            beer.food_pairing?.map(food =>
-                                <li>{food}</li>
+                            beer.food_pairing?.map((food, index) =>
+                                <li key={index}>{food}</li>
                             )
                         }
                     </ol>
