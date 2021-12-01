@@ -27,10 +27,9 @@ const BeerListPage = observer(() => {
 
     return (
         <div>
-            <h1>Beer list page</h1>
-            <SortingBar/>
+            <h1>React beer app</h1>
             <TabBar/>
-            <div className="itemContainer">
+            <div className="itemContainer container">
                 {
                     beerStore.beers.map(beer =>
                         <CartItem className="item" key={beer.id} beer={beer}/>

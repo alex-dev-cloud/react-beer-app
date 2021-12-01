@@ -26,12 +26,24 @@ const SingleBeerPage = observer(() => {
 
     return (
         <div>
-            <h1>Single beer page</h1>
-            <div>
-                <img src={beer.image_url ?? fallBackImg} alt={beer.name}/>
-                <h3>{beer.name}</h3>
-                <hr/>
-                <p>{beer.description}</p>
+            <h1>{beer.name}</h1>
+            <div className="container d-flex">
+                <div className="imageContainer">
+                    <img src={beer.image_url ?? fallBackImg} alt={beer.name}/>
+                </div>
+                <div className="infoContainer">
+                    <h2>Alcohol By Volume: {beer.abv}%</h2>
+                    <p className="tagline">{beer.tagline}</p>
+                    <p>{beer.description}</p>
+                    <h3>This beer pair with:</h3>
+                    <ol>
+                        {
+                            beer.food_pairing?.map(food =>
+                                <li>{food}</li>
+                            )
+                        }
+                    </ol>
+                </div>
             </div>
         </div>
     );

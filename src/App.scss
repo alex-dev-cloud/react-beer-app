@@ -1,14 +1,36 @@
 .itemContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    justify-content: center;
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .container {
-    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.imageContainer {
+    max-height: 500px;
+    img {
+        display: block;
+        height: 100%;
+        width: auto;
+    }
+}
+
+.infoContainer {
+    text-align: left;
+}
+
+.tagline {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.btn-title {
+    margin-right: 15px;
 }

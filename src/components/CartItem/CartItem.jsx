@@ -10,11 +10,11 @@ const CartItem = ({beer}) => {
 
     return (
         <div className={classes.cart} onClick={() => history.push(SINGLE_BEER + '/' + beer.id)}>
+            <p className={classes.beerName}>{beer.name}</p>
             <div className={classes.contentContainer}>
                 <div className={classes.cartImgContainer}>
                     <img src={beer.image_url ?? fallbackImg} alt={beer.name}/>
                 </div>
-                <p>{beer.name}</p>
                 <p className={classes.abvInfo}>abv {beer.abv} %</p>
             </div>
         </div>

@@ -6,15 +6,20 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   border-radius: 3px;
   cursor: pointer;
   transition: all .3s ease-in-out;
+  color: #4a4a4a;
 
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.beerName {
+  font-weight: 600;
 }
 
 .contentContainer {
@@ -22,7 +27,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
 
   p {
     margin: 5px 0;
@@ -44,5 +48,5 @@
 }
 
 .abvInfo {
-  font-weight: 600;
+  font-weight: 400;
 }

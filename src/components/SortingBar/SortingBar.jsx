@@ -1,6 +1,8 @@
 import React, {useContext, useState} from 'react';
 import classes from './SortingBar.module.scss';
 import {Context} from '../../index';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSort, faSortDown, faSortUp} from '@fortawesome/free-solid-svg-icons';
 
 
 const SortingBar = () => {
@@ -27,13 +29,22 @@ const SortingBar = () => {
         beerStore.setBeers(sortedBeers);
     };
 
+    const getSortIconClass = sorting => {
+        if (sorting !== sortingType) {
+            return faSort;
+        }
+        return sortDirection === 'asc' ? faSortUp : faSortDown;
+    };
+
     return (
         <div className={classes.container}>
             <div onClick={sortingByName} className={sortingType === 'name' ? `${classes.item} + ${classes.active}` : classes.item}>
-                By name
+                <span className="btn-title">By name</span>
+                <FontAwesomeIcon icon={getSortIconClass('name')}/>
             </div>
             <div onClick={sortingByAlcohol} className={sortingType === 'alcohol' ? `${classes.item} + ${classes.active}` : classes.item}>
-                By alcohol
+                <span className="btn-title">By alcohol</span>
+                <FontAwesomeIcon icon={getSortIconClass('alcohol')}/>
             </div>
         </div>
     );
