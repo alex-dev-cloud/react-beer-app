@@ -26,7 +26,9 @@ const SingleBeerPage = observer(() => {
 
     return (
         <div>
-            <h1>{beer.name}</h1>
+            <header className="header">
+                <h1>{beer.name}</h1>
+            </header>
             <div className="container d-flex">
                 <div className="imageContainer">
                     <img src={beer.image_url ?? fallBackImg} alt={beer.name}/>
