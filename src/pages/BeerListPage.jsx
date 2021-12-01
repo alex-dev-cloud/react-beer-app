@@ -5,7 +5,6 @@ import {observer} from 'mobx-react-lite';
 import TabBar from '../components/TabBar/TabBar';
 import CartItem from "../components/CartItem/CartItem";
 import {useParams} from 'react-router-dom';
-import SortingBar from "../components/SortingBar/SortingBar";
 import {Loader} from "../components/Loader/Loader";
 
 const BeerListPage = observer(() => {
@@ -27,8 +26,10 @@ const BeerListPage = observer(() => {
 
     return (
         <div>
-            <h1>React beer app</h1>
-            <TabBar/>
+            <header className="header">
+                <h1>React beer app</h1>
+                <TabBar/>
+            </header>
             <div className="itemContainer container">
                 {
                     beerStore.beers.map(beer =>
