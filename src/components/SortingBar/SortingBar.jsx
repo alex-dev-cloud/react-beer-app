@@ -7,16 +7,23 @@ const SortingBar = () => {
 
     const {beerStore} = useContext(Context);
     const [sortingType, setSortingType] = useState(null);
+    const [sortDirection, setSortDirection] = useState('asc');
 
     const sortingByName = () => {
-        const sortedBeers = beerStore.beers.sort( (a, b) => a.name.localeCompare(b.name));
+        let sortedBeers = beerStore.beers.sort( (a, b) => a.name.localeCompare(b.name));
+        sortedBeers = sortDirection === 'asc' ? sortedBeers : sortedBeers.reverse();
         setSortingType('name');
+        const sort = sortDirection === 'asc' ? 'desc' : 'asc';
+        setSortDirection(sort);
         beerStore.setBeers(sortedBeers);
     };
 
     const sortingByAlcohol = () => {
-        const sortedBeers = beerStore.beers.sort( (a, b) => a.abv - b.abv);
+        let sortedBeers = beerStore.beers.sort( (a, b) => a.abv - b.abv);
+        sortedBeers = sortDirection === 'asc' ? sortedBeers : sortedBeers.reverse();
         setSortingType('alcohol');
+        const sort = sortDirection === 'asc' ? 'desc' : 'asc';
+        setSortDirection(sort);
         beerStore.setBeers(sortedBeers);
     };
 
