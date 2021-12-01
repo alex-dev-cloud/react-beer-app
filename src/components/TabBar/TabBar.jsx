@@ -19,7 +19,7 @@ const TabBar = observer(() => {
                         key={tab.path}
                         className={tab.path === activeTab ? `${classes.tabItem} ${classes.active}` : `${classes.tabItem}`}
                         onClick={() => history.push(BEERS_LIST + '/' + tab.path)}>
-                            {tab.title}
+                        {tab.title}
                     </div>
                 )
             }
