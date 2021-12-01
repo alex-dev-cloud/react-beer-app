@@ -5,6 +5,7 @@ import {BeerApi} from '../http/BeerApi';
 import fallBackImg from '../assets/no_photo_beer.png'
 import {Context} from "../index";
 import {Loader} from "../components/Loader/Loader";
+import ShowMoreText from "react-show-more-text";
 
 const SingleBeerPage = observer(() => {
 
@@ -36,7 +37,9 @@ const SingleBeerPage = observer(() => {
                 <div className="infoContainer">
                     <h2>Alcohol By Volume: {beer.abv}%</h2>
                     <p className="tagline">{beer.tagline}</p>
-                    <p>{beer.description}</p>
+                    <p>
+                        <ShowMoreText>{beer.description}</ShowMoreText>
+                    </p>
                     <h3>This beer pair with:</h3>
                     <ol>
                         {
