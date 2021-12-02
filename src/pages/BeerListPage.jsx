@@ -23,9 +23,6 @@ const BeerListPage = observer(() => {
         <div>
             <div className="itemContainer container">
                 {
-                    beerStore.isLoading && <Loader/>
-                }
-                {
                     beerStore.beers.map(beer =>
                         <CartItem className="item" key={beer.id} beer={beer}/>
                     )
