@@ -2,7 +2,6 @@ import React, {useEffect, useContext} from 'react';
 import {BeerApi} from '../http/BeerApi';
 import {Context} from '../index';
 import {observer} from 'mobx-react-lite';
-import TabBar from '../components/TabBar/TabBar';
 import CartItem from "../components/CartItem/CartItem";
 import {useParams} from 'react-router-dom';
 import {Loader} from "../components/Loader/Loader";
@@ -22,10 +21,6 @@ const BeerListPage = observer(() => {
 
     return (
         <div>
-            <header className="header">
-                <h1>React beer app</h1>
-                <TabBar/>
-            </header>
             <div className="itemContainer container">
                 {
                     beerStore.isLoading && <Loader/>
