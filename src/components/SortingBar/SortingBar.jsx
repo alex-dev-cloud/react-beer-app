@@ -4,7 +4,6 @@ import {Context} from '../../index';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSort, faSortDown, faSortUp} from '@fortawesome/free-solid-svg-icons';
 
-
 const SortingBar = () => {
 
     const {beerStore} = useContext(Context);
@@ -13,20 +12,20 @@ const SortingBar = () => {
 
     const sortingByName = () => {
         setSortingType('name');
-        const sort = sortDirection === 'asc' ? 'desc' : 'asc';
-        let sortedBeers = beerStore.beers.sort( (a, b) => a.name.localeCompare(b.name));
-        sortedBeers = sortDirection === 'asc' ? sortedBeers : sortedBeers.reverse();
-        setSortDirection(sort);
-        beerStore.setBeers(sortedBeers);
+        const descending = (a, b) => a.name.localeCompare(b.name);
+        const ascending = (a, b) => b.name.localeCompare(a.name);
+        sortDirection === 'asc' ? setSortDirection('desc') : setSortDirection('asc');
+        const sorting = sortDirection === 'asc' ? ascending : descending;
+        beerStore.beers.sort(sorting);
     };
 
-    const sortingByAlcohol = () => {
-        setSortingType('alcohol');
-        const sort = sortDirection === 'asc' ? 'desc' : 'asc';
-        let sortedBeers = beerStore.beers.sort( (a, b) => a.abv - b.abv);
-        sortedBeers = sortDirection === 'asc' ? sortedBeers : sortedBeers.reverse();
-        setSortDirection(sort);
-        beerStore.setBeers(sortedBeers);
+    const sortingByAbv = () => {
+        setSortingType('abv');
+        const descending = (a, b) => a.abv - b.abv;
+        const ascending = (a, b) => b.abv - a.abv;
+        sortDirection === 'asc' ? setSortDirection('desc') : setSortDirection('asc');
+        const sorting = sortDirection === 'asc' ? ascending : descending;
+        beerStore.beers.sort(sorting);
     };
 
     const getSortIconClass = sorting => {
@@ -42,9 +41,9 @@ const SortingBar = () => {
                 <span className="btn-title">By name</span>
                 <FontAwesomeIcon icon={getSortIconClass('name')}/>
             </div>
-            <div onClick={sortingByAlcohol} className={sortingType === 'alcohol' ? `${classes.item} + ${classes.active}` : classes.item}>
+            <div onClick={sortingByAbv} className={sortingType === 'abv' ? `${classes.item} + ${classes.active}` : classes.item}>
                 <span className="btn-title">By alcohol</span>
-                <FontAwesomeIcon icon={getSortIconClass('alcohol')}/>
+                <FontAwesomeIcon icon={getSortIconClass('abv')}/>
             </div>
         </div>
     );

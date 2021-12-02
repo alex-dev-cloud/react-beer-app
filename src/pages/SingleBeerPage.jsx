@@ -50,7 +50,7 @@ const SingleBeerPage = observer(() => {
                     <h2>Alcohol By Volume: {beer.abv}%</h2>
                     <p className="tagline">{beer.tagline}</p>
                     <div className="description">
-                        <ShowMoreText>{beer.description}</ShowMoreText>
+                        <ShowMoreText width={900}>{beer.description}</ShowMoreText>
                     </div>
                     <h3>This beer pair with:</h3>
                     <ol>

@@ -18,7 +18,7 @@ const AppRouter = () => {
         enter: {
             opacity: 1,
             position: 'absolute',
-            width: '100%'
+            width: '100%',
         },
 
         leave: {
