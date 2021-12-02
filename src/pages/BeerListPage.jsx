@@ -20,10 +20,6 @@ const BeerListPage = observer(() => {
         })
     }, [food]);
 
-    if (beerStore.isLoading) {
-        return <Loader/>
-    }
-
     return (
         <div>
             <header className="header">
@@ -31,6 +27,9 @@ const BeerListPage = observer(() => {
                 <TabBar/>
             </header>
             <div className="itemContainer container">
+                {
+                    beerStore.isLoading && <Loader/>
+                }
                 {
                     beerStore.beers.map(beer =>
                         <CartItem className="item" key={beer.id} beer={beer}/>

@@ -22,11 +22,8 @@ const SingleBeerPage = observer(() => {
         })
     }, []);
 
-    if (beerStore.isLoading) {
-        return <Loader/>
-    }
-
     return (
+
         <div>
             <header className="header d-flex f-center">
                 <div className="wrapper">
@@ -40,6 +37,11 @@ const SingleBeerPage = observer(() => {
                     <h1>{beer.name}</h1>
                 </div>
             </header>
+
+            {
+                beerStore.isLoading && <Loader/>
+            }
+
             <div className="container d-flex f-center">
                 <div className="imageContainer">
                     <img src={beer.image_url ?? fallBackImg} alt={beer.name}/>
