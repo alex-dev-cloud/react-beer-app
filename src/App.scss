@@ -1,3 +1,5 @@
+@import "utils/variables";
+
 .itemContainer {
     display: flex;
     flex-wrap: wrap;
@@ -10,16 +12,16 @@
 }
 
 .beer-container {
-  border: 1px solid #cccccc;
+  border: 1px solid $border-color;
   padding: 20px;
   margin-top: 15px;
 }
 
 .header {
-    background: #f3f3f3;
+    background: $background-secondary;
     padding-top: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid $border-color;
     padding-left: calc(100vw - 100%);
 
     .wrapper {
@@ -79,7 +81,7 @@
     .pair-list {
       padding-left: 10px;
       list-style: none;
-      border-left: 3px solid #cccccc;
+      border-left: 3px solid $border-color;
     }
 }
 
@@ -106,7 +108,7 @@
 
 .description {
     font-style: italic;
-    border-left: 3px solid #cccccc;
+    border-left: 3px solid $border-color;
     padding-left: 10px;
 
     .more-text {

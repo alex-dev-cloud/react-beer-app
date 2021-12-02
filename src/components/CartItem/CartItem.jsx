@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {SINGLE_BEER} from '../../constants';
+import {SINGLE_BEER} from '../../utils/constants';
 import classes from './CartItem.module.scss';
 import fallbackImg from '../../assets/no_photo_beer.png'
 

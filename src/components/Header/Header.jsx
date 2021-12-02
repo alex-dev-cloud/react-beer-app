@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Redirect, Route} from 'react-router-dom';
-import {BEERS_LIST, SINGLE_BEER} from "../../constants";
+import {BEERS_LIST, SINGLE_BEER} from "../../utils/constants";
 import ListPageHeader from "./ListPageHeader";
 import BeerPageHeader from "./BeerPageHeader";
 

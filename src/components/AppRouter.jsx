@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Redirect, Route, useLocation} from 'react-router-dom';
 import {routes} from '../routes'
-import {BEERS_LIST} from "../constants";
+import {BEERS_LIST} from "../utils/constants";
 import {useTransition, animated} from 'react-spring';
 import Header from './Header/Header'
 

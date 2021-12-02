@@ -3,7 +3,7 @@ import {observer} from 'mobx-react-lite';
 import {useHistory, useLocation} from 'react-router-dom';
 import {tabsList} from './tabsList';
 import classes from './TabBar.module.scss';
-import {BEERS_LIST} from "../../constants";
+import {BEERS_LIST} from "../../utils/constants";
 import SortingBar from "../SortingBar/SortingBar";
 
 const TabBar = observer(() => {
