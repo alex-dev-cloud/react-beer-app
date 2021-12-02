@@ -38,7 +38,8 @@ const AppRouter = () => {
             left: 0,
             bottom: 0,
             right: 0,
-            translateX: '1000px'
+            translateX: '1000px',
+            display: 'none'
         },
 
         config: {duration: 300}
@@ -52,16 +53,14 @@ const AppRouter = () => {
                 {
                     transitions((props, item) => (
                         <animated.div style={props}>
-                            <div style={{position: 'absolute', width: '100%'}}>
-                                <Switch location={item}>
-                                    {
-                                        routes.map(({path, component}) =>
-                                            <Route key={path} path={path} component={component} exact/>
-                                        )
-                                    }
-                                    <Redirect to={BEERS_LIST}/>
-                                </Switch>
-                            </div>
+                            <Switch location={item}>
+                                {
+                                    routes.map(({path, component}) =>
+                                        <Route key={path} path={path} component={component} exact/>
+                                    )
+                                }
+                                <Redirect to={BEERS_LIST}/>
+                            </Switch>
                         </animated.div>
                     ))
                 }
