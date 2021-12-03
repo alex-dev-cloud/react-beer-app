@@ -3,6 +3,12 @@
   margin-top: 20px;
 }
 
+.tabsWrapper {
+  display: flex;
+  width: 788px;
+  justify-content: space-between;
+}
+
 .tabItem {
   padding: 20px 15px 15px;
   margin-left: 15px;

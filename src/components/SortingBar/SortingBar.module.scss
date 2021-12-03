@@ -8,9 +8,10 @@
 }
 
 .item {
-  margin-left: 20px;
+  box-sizing: border-box;
+  margin-right: 20px;
   width: 132px;
-  height: 34px;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;

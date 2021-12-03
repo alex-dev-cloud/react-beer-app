@@ -15,7 +15,7 @@ const TabBar = observer(() => {
 
         const pathArr = location.pathname.split('/');
 
-        if ((pathArr.length === 2) && path === '/') {
+        if (path === '/' && pathArr.length < 3) {
             return `${classes.tabItem} ${classes.active}`;
         }
 
@@ -33,17 +33,21 @@ const TabBar = observer(() => {
     return (
         <div className={classes.tabBarContainer}>
             <div className="container d-flex">
-                {
-                    tabsList.map(tab =>
-                        <div
-                            key={tab.path}
-                            className={getTabClass(tab)}
-                            onClick={() => tabClickHandler(tab)}>
-                            {tab.title}
-                        </div>
-                    )
-                }
-                <SortingBar/>
+                <div className={classes.tabsWrapper}>
+                    <div className="d-flex">
+                        {
+                            tabsList.map(tab =>
+                                <div
+                                    key={tab.path}
+                                    className={getTabClass(tab)}
+                                    onClick={() => tabClickHandler(tab)}>
+                                    {tab.title}
+                                </div>
+                            )
+                        }
+                    </div>
+                    <SortingBar/>
+                </div>
             </div>
         </div>
     );
