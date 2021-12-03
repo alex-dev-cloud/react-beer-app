@@ -1,50 +1,15 @@
 import React from 'react';
 import {Switch, Redirect, Route, useLocation} from 'react-router-dom';
-import {routes} from '../routes'
+import {routes} from '../utils/routes'
 import {BEERS_LIST} from "../utils/constants";
+import {PAGE_TRANSITION} from "../utils/transitions";
 import {useTransition, animated} from 'react-spring';
 import Header from './Header/Header'
 
 const AppRouter = () => {
 
     const location = useLocation();
-    const transitions = useTransition(location, {
-
-        from: {
-            opacity: 0,
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            translateX: '-1000px',
-        },
-
-        enter: {
-            opacity: 1,
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            translateX: '0px',
-
-        },
-
-        leave: {
-            opacity: 0,
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            translateX: '1000px',
-            display: 'none'
-        },
-
-        config: {duration: 300}
-
-    });
+    const transitions = useTransition(location, PAGE_TRANSITION);
 
     return (
         <>
